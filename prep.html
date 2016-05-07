@@ -84,8 +84,8 @@ New Estimate
       <br>
       <br>
       <br> Total Real Time in Minutes:
-      <p id="real_total"></p>
-<button onclick="totalreal()">
+      <p id="adj_total"></p>
+<button onclick="adjcalc()">
   Compute Real</button>
     </td>
 </table>
@@ -166,5 +166,6 @@ function adjcalc() {
   var new_minutes = document.getElementById("new_minutes").value;
   var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
   var adj_total = new_total * z;
+  document.getElementById("adj_total").innerHTML = adj_total;
 }
 </script>
