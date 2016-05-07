@@ -15,6 +15,8 @@
       <br>
       <br> Total Estimate in Minutes:
       <p id="old_total"></p>
+      <button onclick="totalest()">
+  Compute Estimate</button>
     </td>
     <td>
       <h2>Actual Time</h2> Years :
@@ -31,18 +33,19 @@
       <br>
       <br> Total Real Time in Minutes:
       <p id="real_total"></p>
-    </td>
-</table>
-<button onclick="totalest()">
-	Compute Estimate</button>
-
 <button onclick="totalreal()">
   Compute Real</button>
+    </td>
+</table>
+
+
 
 <h2>
 Your Estimate Factor is:
 </h2>
 <p id="factor"></p>
+<button onclick="calcfactor">
+  Compute Real</button>
 
 <h2>
 New Estimate
@@ -68,22 +71,9 @@ function totalreal() {
   var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
   document.getElementById("real_total").innerHTML = real_total;
 }
+function calcfactor() {
+  var cfactor = old_total + real_total
+  document.getElementByID("factor").innterHTML = cfactor;
+}
 
 </script>
-
- <body>
-    <p>Click the button to calculate x.</p>
-    <button onclick="myFunction()">Try it</button>
-    <br/>
-    <br/>Enter first number:
-    <input type="text" id="txt1">Enter second number:
-    <input type="text" id="txt2">
-    <p id="demo"></p>
-    <script>
-      function myFunction() {
-        var y = document.getElementById("txt1").value;
-        var z = document.getElementById("txt2").value;
-        var x = y + z;
-        document.getElementById("demo").innerHTML = x;
-      }
-    </script>
