@@ -129,7 +129,7 @@
         <div class="row">
             
                 
-                <button onclick="calcfactor();pict()" class="btn btn-primary-outline btn-block">Compute Real</button>
+                <button onclick="calcfactor()" class="btn btn-primary-outline btn-block">Compute Real</button>
     
         </div>
 
@@ -253,10 +253,6 @@ function calcfactor() {
   var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
   var z = real_total / old_total;
   document.getElementById("factor").innerHTML = z;
-}
-
-function pict() {
-document.getElementById("theImage").style.visibility = "visible";
 }
 
 function newcalc()
