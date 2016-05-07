@@ -63,13 +63,6 @@ function totalest() {
   document.getElementById("old_total").innerHTML = old_total;
 }
 
-  var old_years = document.getElementById("old_years").value;
-  var old_months = document.getElementById("old_months").value;
-  var old_days = document.getElementById("old_days").value;
-  var old_hours = document.getElementById("old_hours").value;
-  var old_minutes = document.getElementById("old_minutes").value;
-  var old_total = +old_years * 60 * 24 * 30 * 365+ +old_months * 60 * 24 * 30 + +old_days * 60 * 24 + +old_hours * 60 + +old_minutes;
-
 function totalreal() {
   var real_years = document.getElementById("real_years").value;
   var real_months = document.getElementById("real_months").value;
@@ -80,16 +73,9 @@ function totalreal() {
   document.getElementById("real_total").innerHTML = real_total;
 }
 
-  var real_years = document.getElementById("real_years").value;
-  var real_months = document.getElementById("real_months").value;
-  var real_days = document.getElementById("real_days").value;
-  var real_hours = document.getElementById("real_hours").value;
-  var real_minutes = document.getElementById("real_minutes").value;
-  var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
-
 function calcfactor() {
-  var cfactor = old_total + real_total
-  document.getElementByID("factor").innterHTML = cfactor;
+  var cfactor = window.old_total + window.real_total
+  document.getElementById("factor").innterHTML = cfactor;
 }
 
 </script>
