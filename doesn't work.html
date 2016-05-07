@@ -54,33 +54,33 @@ New Estimate
   <tr>
     <td>
       <h2>Your Next Estimate</h2> Years :
-      <input type="number" id="new_years"  >
+      <input type="number" id="old_years"  >
       <br> Months :
-      <input type="number" id="new_months"  >
+      <input type="number" id="old_months"  >
       <br> Days :
-      <input type="number" id="new_days"  >
+      <input type="number" id="old_days"  >
       <br> Hours :
-      <input type="number" id="new_hours"  >
+      <input type="number" id="old_hours"  >
       <br> Minutes :
-      <input type="number" id="new_minutes"  >
+      <input type="number" id="old_minutes"  >
       <br>
       <br>
       <br> Total Estimate in Minutes:
-      <p id="new_total"></p>
+      <p id="old_total"></p>
       <button onclick="totalest()">
   Compute Estimate</button>
     </td>
     <td>
       <h2>Calculated Estimate</h2> Years :
-      <input type="number" id="adj_years"  >
+      <input type="number" id="real_years"  >
       <br> Months :
-      <input type="number" id="adj_months"  >
+      <input type="number" id="real_months"  >
       <br> Days :
-      <input type="number" id="adj_days"  >
+      <input type="number" id="real_days"  >
       <br> Hours :
-      <input type="number" id="adj_hours"  >
+      <input type="number" id="real_hours"  >
       <br> Minutes :
-      <input type="number" id="adj_minutes"  >
+      <input type="number" id="real_minutes"  >
       <br>
       <br>
       <br> Total Real Time in Minutes:
@@ -132,8 +132,7 @@ function calcfactor() {
 
 // Variables are duplicated because global variables aren't working.
 
-function adjustedcalc()
-  {
+  function adjustedcalc(){
   var old_years = document.getElementById("old_years").value;
   var old_months = document.getElementById("old_months").value;
   var old_days = document.getElementById("old_days").value;
@@ -147,13 +146,7 @@ function adjustedcalc()
   var real_minutes = document.getElementById("real_minutes").value;
   var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
   var z = real_total / old_total;
-  var new_years = document.getElementById("new_years").value;
-  var new_months = document.getElementById("new_months").value;
-  var new_days = document.getElementById("new_days").value;
-  var new_hours = document.getElementById("new_hours").value;
-  var new_minutes = document.getElementById("new_minutes").value;
-  var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
-  var adj_total = new_total * z;
+  var adj_total = z * 
   }
 
 
