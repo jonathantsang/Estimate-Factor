@@ -21,6 +21,7 @@
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
+    #theImage { visibility: hidden; }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -128,7 +129,7 @@
         <div class="row">
             
                 
-                <button onclick="calcfactor()" class="btn btn-primary-outline btn-block">Compute Real</button>
+                <button onclick="calcfactor();pict()" class="btn btn-primary-outline btn-block">Compute Real</button>
     
         </div>
 
@@ -136,13 +137,57 @@
 
         <div class="row text-center">
             <h2>Your factor is:</h2>
-            <p id="factor"></p>
+            <h1 id="factor"></h1>
+            <p><img id="theImage" src="pic.jpg" height="360" width="640"></p>
         </div>
 
         </div>
 
         </div>
        
+<div class="col-md-12 text-center">
+<h2>
+New Estimate
+</h2>
+<div class="col-md-6 text-center">
+      <h2>Your Next Estimate</h2> Years :
+      <input type="number" id="new_years"  >
+      <br><br> Months :
+      <input type="number" id="new_months"  >
+      <br><br> Days :
+      <input type="number" id="new_days"  >
+      <br><br> Hours :
+      <input type="number" id="new_hours"  >
+      <br><br> Minutes :
+      <input type="number" id="new_minutes"  >
+      <br>
+      <br>
+      <br> Total Estimate in Minutes:
+      <p id="new_total"></p>
+      <button onclick="newcalc()">
+  Compute Next Estimate</button>
+</div>
+<div class="col-md-6 text-center">
+      <h2>Calculated Estimate</h2> Years :
+      <input type="number" id="adj_years"  >
+      <br><br> Months :
+      <input type="number" id="adj_months"  >
+      <br><br> Days :
+      <input type="number" id="adj_days"  >
+      <br><br> Hours :
+      <input type="number" id="adj_hours"  >
+      <br><br> Minutes :
+      <input type="number" id="adj_minutes"  >
+      <br>
+      <br>
+</div>
+      <br> Total Real Time in Minutes:
+      <p id="adj_total"></p>
+<button onclick="adjcalc()">
+  Compute Real</button>
+    </td>
+</table>
+</div>
 
 
 
@@ -160,6 +205,9 @@
 
     </div>
     <!-- /.container -->
+    <br>
+<br>
+<br>
 
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
@@ -168,6 +216,8 @@
     <script src="js/bootstrap.min.js"></script>
 
 <script>
+
+
 function totalest() {
   var old_years = document.getElementById("old_years").value;
   var old_months = document.getElementById("old_months").value;
@@ -205,6 +255,10 @@ function calcfactor() {
   var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
   var z = real_total / old_total;
   document.getElementById("factor").innerHTML = z;
+}
+
+function pict() {
+document.getElementById("theImage").style.visibility = "visible";
 }
 
 function newcalc()
