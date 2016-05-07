@@ -94,6 +94,8 @@
                     <br><br>
                     Days: <input type="number" id="old_days">
                     <br><br>
+                    Hours : <input type="number" id="old_hours"  >
+                    <br><br>
                     Minutes: <input type="number" id="old_minutes">
             </div>
             </div>
@@ -105,13 +107,15 @@
                     
                 <h2><div class="text-center">Actual</div></h2>
                     
-                    Years: <input type="number" id="new_years">
+                    Years: <input type="number" id="real_years">
                     <br><br>
-                    Months: <input type="number" id="new_months">
+                    Months: <input type="number" id="real_months">
                     <br><br>
-                    Days: <input type="number" id="new_days">
+                    Days: <input type="number" id="real_days">
                     <br><br>
-                    Minutes: <input type="number" id="new_minutes">
+                    Hours : <input type="number" id="real_hours">
+                    <br><br>
+                    Minutes: <input type="number" id="real_minutes">
             </div>
 
             <div class="col-md-2 text-center">
@@ -123,7 +127,7 @@
 
         <div class="row">
             
-                <p id="factor"></p>
+                
                 <button onclick="calcfactor()" class="btn btn-primary-outline btn-block">Compute Real</button>
     
         </div>
@@ -132,6 +136,7 @@
 
         <div class="row text-center">
             <h2>Your factor is:</h2>
+            <p id="factor"></p>
         </div>
 
         </div>
@@ -161,6 +166,84 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+<script>
+function totalest() {
+  var old_years = document.getElementById("old_years").value;
+  var old_months = document.getElementById("old_months").value;
+  var old_days = document.getElementById("old_days").value;
+  var old_hours = document.getElementById("old_hours").value;
+  var old_minutes = document.getElementById("old_minutes").value;
+  var old_total = +old_years * 60 * 24 * 30 * 365+ +old_months * 60 * 24 * 30 + +old_days * 60 * 24 + +old_hours * 60 + +old_minutes;
+  document.getElementById("old_total").innerHTML = old_total;
+}
+
+function totalreal() {
+  var real_years = document.getElementById("real_years").value;
+  var real_months = document.getElementById("real_months").value;
+  var real_days = document.getElementById("real_days").value;
+  var real_hours = document.getElementById("real_hours").value;
+  var real_minutes = document.getElementById("real_minutes").value;
+  var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
+  document.getElementById("real_total").innerHTML = real_total;
+} 
+
+// Variables are duplicated because global variables aren't working.
+
+function calcfactor() {
+  var old_years = document.getElementById("old_years").value;
+  var old_months = document.getElementById("old_months").value;
+  var old_days = document.getElementById("old_days").value;
+  var old_hours = document.getElementById("old_hours").value;
+  var old_minutes = document.getElementById("old_minutes").value;
+  var old_total = +old_years * 60 * 24 * 30 * 365+ +old_months * 60 * 24 * 30 + +old_days * 60 * 24 + +old_hours * 60 + +old_minutes;
+  var real_years = document.getElementById("real_years").value;
+  var real_months = document.getElementById("real_months").value;
+  var real_days = document.getElementById("real_days").value;
+  var real_hours = document.getElementById("real_hours").value;
+  var real_minutes = document.getElementById("real_minutes").value;
+  var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
+  var z = real_total / old_total;
+  document.getElementById("factor").innerHTML = z;
+}
+
+function newcalc()
+  {
+  var new_years = document.getElementById("new_years").value;
+  var new_months = document.getElementById("new_months").value;
+  var new_days = document.getElementById("new_days").value;
+  var new_hours = document.getElementById("new_hours").value;
+  var new_minutes = document.getElementById("new_minutes").value;
+  var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
+  document.getElementById("new_total").innerHTML = new_total;
+  }
+
+// Variables are duplicated because global variables aren't working.
+
+function adjcalc() {
+  var old_years = document.getElementById("old_years").value;
+  var old_months = document.getElementById("old_months").value;
+  var old_days = document.getElementById("old_days").value;
+  var old_hours = document.getElementById("old_hours").value;
+  var old_minutes = document.getElementById("old_minutes").value;
+  var old_total = +old_years * 60 * 24 * 30 * 365+ +old_months * 60 * 24 * 30 + +old_days * 60 * 24 + +old_hours * 60 + +old_minutes;
+  var real_years = document.getElementById("real_years").value;
+  var real_months = document.getElementById("real_months").value;
+  var real_days = document.getElementById("real_days").value;
+  var real_hours = document.getElementById("real_hours").value;
+  var real_minutes = document.getElementById("real_minutes").value;
+  var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
+  var z = real_total / old_total;
+  var new_years = document.getElementById("new_years").value;
+  var new_months = document.getElementById("new_months").value;
+  var new_days = document.getElementById("new_days").value;
+  var new_hours = document.getElementById("new_hours").value;
+  var new_minutes = document.getElementById("new_minutes").value;
+  var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
+  var adj_total = new_total * z;
+  document.getElementById("adj_total").innerHTML = adj_total;
+}
+</script>
 
 </body>
 
