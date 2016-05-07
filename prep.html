@@ -1,0 +1,86 @@
+<table>
+  <tr>
+    <td>
+      <h2>Your Estimate</h2> Years :
+      <input type="number" id="old_years"  >
+      <br> Months :
+      <input type="number" id="old_months"  >
+      <br> Days :
+      <input type="number" id="old_days"  >
+      <br> Hours :
+      <input type="number" id="old_hours"  >
+      <br> Minutes :
+      <input type="number" id="old_minutes"  >
+      <br>
+      <br>
+      <br> Total Estimate in Minutes:
+      <p id="old_total"></p>
+    </td>
+    <td>
+      <h2>Actual Time</h2> Years :
+      <input type="number" id="real_years"  >
+      <br> Months :
+      <input type="number" id="real_months"  >
+      <br> Days :
+      <input type="number" id="real_days"  >
+      <br> Hours :
+      <input type="number" id="real_hours"  >
+      <br> Minutes :
+      <input type="number" id="real_minutes"  >
+      <br>
+      <br>
+      <br> Total Real Time in Minutes:
+      <p id="real_total"></p>
+    </td>
+</table>
+<button onclick="totalest()">
+	Sum</button>
+
+<h2>
+Your Estimate Factor is:
+</h2>
+<p id="factor"></p>
+
+<h2>
+New Estimate
+</h2>
+
+<script>
+function totalest() {
+  var old_years = document.getElementById("old_years").value;
+  var old_months = document.getElementById("old_months").value;
+  var old_days = document.getElementById("old_days").value;
+  var old_hours = document.getElementById("old_hours").value;
+  var old_minutes = document.getElementById("old_minutes").value;
+  var old_total = +old_years + +old_months + +old_days + +old_hours + +old_minutes;
+  document.getElementById("old_total").innerHTML = old_total;
+}
+
+function totalest() {
+  var old_years = document.getElementById("old_years").value;
+  var old_months = document.getElementById("old_months").value;
+  var old_days = document.getElementById("old_days").value;
+  var old_hours = document.getElementById("old_hours").value;
+  var old_minutes = document.getElementById("old_minutes").value;
+  var old_total = +old_years + +old_months + +old_days + +old_hours + +old_minutes;
+  document.getElementById("old_total").innerHTML = old_total;
+}
+
+</script>
+
+ <body>
+    <p>Click the button to calculate x.</p>
+    <button onclick="myFunction()">Try it</button>
+    <br/>
+    <br/>Enter first number:
+    <input type="text" id="txt1">Enter second number:
+    <input type="text" id="txt2">
+    <p id="demo"></p>
+    <script>
+      function myFunction() {
+        var y = document.getElementById("txt1").value;
+        var z = document.getElementById("txt2").value;
+        var x = y + z;
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
