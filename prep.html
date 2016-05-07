@@ -67,8 +67,8 @@ New Estimate
       <br>
       <br> Total Estimate in Minutes:
       <p id="new_total"></p>
-      <button onclick="totalest()">
-  Compute Estimate</button>
+      <button onclick="newcalc()">
+  Compute Next Estimate</button>
     </td>
     <td>
       <h2>Calculated Estimate</h2> Years :
@@ -130,10 +130,22 @@ function calcfactor() {
   document.getElementById("factor").innerHTML = z;
 }
 
+
+
+function newcalc()
+  {
+  var new_years = document.getElementById("new_years").value;
+  var new_months = document.getElementById("new_months").value;
+  var new_days = document.getElementById("new_days").value;
+  var new_hours = document.getElementById("new_hours").value;
+  var new_minutes = document.getElementById("new_minutes").value;
+  var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
+  document.getElementById("new_total").innerHTML = new_total;
+  }
+
 // Variables are duplicated because global variables aren't working.
 
-function adjustedcalc()
-  {
+function adjcalc() {
   var old_years = document.getElementById("old_years").value;
   var old_months = document.getElementById("old_months").value;
   var old_days = document.getElementById("old_days").value;
@@ -154,7 +166,5 @@ function adjustedcalc()
   var new_minutes = document.getElementById("new_minutes").value;
   var new_total = +new_years * 60 * 24 * 30 * 365+ +new_months * 60 * 24 * 30 + +new_days * 60 * 24 + +new_hours * 60 + +new_minutes;
   var adj_total = new_total * z;
-  }
-
-
+}
 </script>
