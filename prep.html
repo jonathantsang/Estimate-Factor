@@ -55,7 +55,7 @@ function totalest() {
   var old_days = document.getElementById("old_days").value;
   var old_hours = document.getElementById("old_hours").value;
   var old_minutes = document.getElementById("old_minutes").value;
-  var old_total = +old_years + +old_months + +old_days + +old_hours + +old_minutes;
+  var old_total = +old_years * 60 * 24 * 30 * 365+ +old_months * 60 * 24 * 30 + +old_days * 60 * 24 + +old_hours * 60 + +old_minutes;
   document.getElementById("old_total").innerHTML = old_total;
 }
 
@@ -65,7 +65,7 @@ function totalreal() {
   var real_days = document.getElementById("real_days").value;
   var real_hours = document.getElementById("real_hours").value;
   var real_minutes = document.getElementById("real_minutes").value;
-  var real_total = +real_years + +real_months + +real_days + +real_hours + +real_minutes;
+  var real_total = +real_years * 60 * 24 * 30 * 365+ +real_months * 60 * 24 * 30 + +real_days * 60 * 24 + +real_hours * 60 + +real_minutes;
   document.getElementById("real_total").innerHTML = real_total;
 }
 
